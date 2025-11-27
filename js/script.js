@@ -334,14 +334,15 @@
 
     function createParticle(initialize) {
       return {
-        x: rand(0, width),
-        y: rand(0, height),
-        r: rand(0.6, 2.2),
-        dx: rand(-0.2, 0.2),
-        dy: rand(-0.15, 0.15),
-        alpha: rand(0.03, 0.12),
-        hueShift: rand(0, 360),
-        drift: rand(-0.05, 0.05),
+        x: rand(3, width),
+        y: rand(3, height),
+        r: rand(0.6, 2.5),
+        dx: rand(-2, 2),
+        dy: rand(-2, 2),
+        alpha: rand(-4, 4),
+        hueShift: rand(0, 180),
+        drift: rand(-10, 10),
+        color: rand(0,0)
       };
     }
 
@@ -349,7 +350,7 @@
       ctx.clearRect(0, 0, width, height);
       particles.forEach(p => {
         // gentle color based on theme accents
-        const accent1 = getComputedStyle(root).getPropertyValue('--accent-1').trim() || '#60a5fa';
+        const accent1 = getComputedStyle(root).getPropertyValue('--accent-1').trim() || '#ecc205ff';
         // draw circle
         ctx.beginPath();
         ctx.fillStyle = `rgba(255,255,255,${p.alpha})`;

@@ -2,11 +2,15 @@
    THEME VARIABLES
 ---------------------------------------------------------- */
 :root {
-  --bg: #0b0f14;
+  --bg: #060d14;
   --text: #e6eef6;
-  --surface: #111826;
-  --accent-1: #60a5fa;
-  --accent-2: #5eead4;
+  --surface: #0b0c0e;
+  --accent-1: #0c0118;
+  --accent-2: #811010;
+  --accent-3: #080be2c5;
+  --accent-4: #5e0342c5;
+  --accent-5: #2a0879c5;
+
 
   --radius: 12px;
   --shadow: 0 8px 24px rgba(0,0,0,0.35);
@@ -19,15 +23,23 @@ html[data-theme="light"] {
   --surface: #ffffff;
   --accent-1: #2563eb;
   --accent-2: #4ade80;
+  --accent-3: #07f562c5;
+  --accent-4: #063df1c5;
+  --accent-5: #07096ec5;
+
 }
 
 /* NEON THEME */
 html[data-theme="neon"] {
-  --bg: #05010d;
+  --bg: #100429;
   --text: #e8e6ff;
   --surface: #120027;
-  --accent-1: #ff00e6;
-  --accent-2: #00f7ff;
+  --accent-1: #fa2c07;
+  --accent-2: #3a10d1;
+  --accent-3: #31012bf5;
+  --accent-4: #ff0000;
+  --accent-5: #f5a905ee;
+
 }
 
 /* ----------------------------------------------------------
@@ -220,7 +232,7 @@ h2 {
   box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s ease, background 0.3s ease;
+  transition: transform 0.5s ease, background 0.3s ease;
 }
 .btn:hover {
   transform: translateY(-3px);
@@ -441,27 +453,52 @@ input, textarea {
 .animated-bg {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 30% 30%, var(--accent-1), transparent 50%),
-              radial-gradient(circle at 70% 70%, var(--accent-2), transparent 50%);
-  filter: blur(40px);
-  animation: hueShift 30s infinite linear;
+  background: radial-gradient(circle at 30% 30%, var(--accent-1), transparent 70%),
+              radial-gradient(circle at 50% 50%, var(--accent-2), transparent 70%),
+              radial-gradient(circle at 70% 70%, var(--accent-3), transparent 70%),
+              radial-gradient(circle at 600% 60%, var(--accent-4), transparent 70%),
+              radial-gradient(circle at 70% 70%, var(--accent-5), transparent 70%)
+
+;
+  filter: blur(10px);
+  animation: hueShift 10s infinite linear;
   z-index: -3;
 }
 
 @keyframes hueShift {
-  from { filter: hue-rotate(0deg) blur(40px); }
-  to { filter: hue-rotate(360deg) blur(40px); }
+  from { filter: hue-rotate(0deg) blur(10px); }
+  to { filter: hue-rotate(360deg) blur(10px); }
 }
 
 /* PARTICLES CANVAS */
 #particles {
   position: fixed;
-  inset: 0;
-  z-index: -2;
+  inset: 5;
+  z-index: -3;
+  animation: infinite linear;
 }
 
 /* NEON EFFECT */
 html[data-theme="neon"] .project-card:hover,
 html[data-theme="neon"] .btn {
   box-shadow: 0 0 20px var(--accent-1), 0 0 35px var(--accent-2);
+}
+.profile-photo{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent-1);
+  box-shadow: 0 0 12px rgba(0,12,255,0.5);
+  position: relative;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+}
+.profile-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
