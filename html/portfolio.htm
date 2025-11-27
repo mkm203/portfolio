@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dark Portfolio — Your Name</title>
+  <meta name="description" content="Dark themed portfolio showcasing work, skills and contact info." />
+  <link rel="stylesheet" href="..css/style.css" />
+</head>
+<body>
+
+  <!-- Animated Background Layers -->
+  <div class="animated-bg"></div>
+  <canvas id="particles"></canvas>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="Home">YourName</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- NEW THEME SWITCHER -->
+        <div class="theme-switcher">
+          <button class="theme-btn" data-theme="dark" title="Dark Mode">🌑</button>
+          <button class="theme-btn" data-theme="light" title="Light Mode">🌕</button>
+          <button class="theme-btn" data-theme="neon" title="Neon Mode">🌈</button>
+        </div>
+
+        <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" class="mobile-menu-btn">☰</button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" hidden>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero reveal">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Hi — I'm <span class="accent">Your Name</span>.</h1>
+          <p class="lead">I build beautiful, accessible interfaces and delightful frontend experiences.</p>
+
+          <div class="hero-cta">
+            <a class="btn" href="#projects">See my work</a>
+            <a class="btn ghost" href="#contact">Contact me</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <svg class="avatar" viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#5EEAD4"/>
+                <stop offset="1" stop-color="#60A5FA"/>
+              </linearGradient>
+            </defs>
+            <rect width="120" height="120" rx="18" fill="rgba(255,255,255,0.03)"/>
+            <circle cx="60" cy="46" r="20" fill="url(#g)"/>
+            <rect x="26" y="78" width="68" height="14" rx="7" fill="rgba(255,255,255,0.04)"/>
+          </svg>
+          <div>
+            <h3>Frontend Developer</h3>
+            <p>JS · HTML · CSS · Accessibility</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container reveal">
+      <h2>About</h2>
+      <div class="about-grid">
+        <div>
+          <p>I’m a frontend engineer focused on performant, accessible and pleasant web experiences.</p>
+          <ul>
+            <li>UI architecture</li>
+            <li>Component libraries</li>
+            <li>Responsive design</li>
+          </ul>
+        </div>
+        <aside>
+          <h3>Quick facts</h3>
+          <ul class="facts">
+            <li><strong>Location:</strong> City, Country</li>
+            <li><strong>Available:</strong> Yes</li>
+            <li><strong>Email:</strong> <a href="mailto:you@example.com">you@example.com</a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section container reveal">
+      <h2>Projects</h2>
+
+      <div class="projects-grid" id="projects-grid">
+        <article class="project-card reveal"
+          tabindex="0"
+          data-title="Project Alpha"
+          data-desc="A SPA that does awesome things."
+          data-tech="Vanilla JS · CSS"
+          data-link="https://example.com">
+
+          <div class="thumb">
+            <svg viewBox="0 0 600 360">
+              <defs><linearGradient id="p1" x1="0" x2="1"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+              <rect width="600" height="360" fill="url(#p1)"/>
+            </svg>
+          </div>
+
+          <div class="card-body">
+            <h3>Project Alpha</h3>
+            <p class="card-meta">Vanilla JS · CSS</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal"
+          tabindex="0"
+          data-title="Project Beacon"
+          data-desc="Design system & component library."
+          data-tech="React · Storybook"
+          data-link="#">
+
+          <div class="thumb">
+            <svg viewBox="0 0 600 360">
+              <defs><linearGradient id="p2" x1="0" x2="1"><stop offset="0" stop-color="#F97316"/><stop offset="1" stop-color="#F43F5E"/></linearGradient></defs>
+              <rect width="600" height="360" fill="url(#p2)"/>
+            </svg>
+          </div>
+
+          <div class="card-body">
+            <h3>Project Beacon</h3>
+            <p class="card-meta">React · Storybook</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section container reveal">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">HTML, CSS, JavaScript</div>
+        <div class="skill">React, Vite, Node</div>
+        <div class="skill">Figma, Accessibility</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container reveal">
+      <h2>Contact</h2>
+
+      <form id="contact-form" class="contact-form" action="javascript:void(0)" novalidate>
+        <div class="form-row">
+          <label>Name</label>
+          <input name="name" required />
+        </div>
+
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" name="email" required />
+        </div>
+
+        <div class="form-row">
+          <label>Message</label>
+          <textarea rows="6" name="message" required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn">Send</button>
+          <button class="btn ghost" type="reset">Reset</button>
+        </div>
+
+        <p id="form-feedback" class="muted"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Your Name</p>
+      <div class="social">
+        <a href="#">GH</a>
+        <a href="#">IN</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="project-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close">✕</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <p id="modal-tech" class="muted"></p>
+      <div class="modal-actions">
+        <a id="modal-link" class="btn" target="_blank">Open Project</a>
+        <button id="modal-copy" class="btn ghost">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
